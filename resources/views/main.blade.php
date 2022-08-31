@@ -5,25 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf" content="{{ csrf_token() }}">
         <title>board</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <ul class="flex">
+        <li class="mr-3">
+            <a class="inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white" href="#">Home</a>
+        </li>
+        <li class="mr-3">
+            <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3"
+               href="/logout">Logout</a>
+        </li>
+    </ul>
     <p>boardS</p>
     <div>
 
