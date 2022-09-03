@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RegisterController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,8 @@ Route::group(['middleware' => ['guest']], function(){
     Route::get('/register', [RegisterController::class, 'index']);
 
     Route::post('/register', [RegisterController::class, 'register']);
+
+    Route::get('/test', [LoginController::class, 'test']);
 });
 
 Route::group(['middleware' => ['auth']], function() {

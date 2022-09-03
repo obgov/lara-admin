@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginPostRequest;
+use App\Services\MainService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
@@ -27,5 +28,10 @@ class LoginController extends Controller
         Session::flush();
         Auth::logout();
         return redirect()->route('index');
+    }
+
+    public function test(MainService $service)
+    {
+        echo $service->testService();
     }
 }
