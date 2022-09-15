@@ -33,6 +33,6 @@ Route::group(['middleware' => ['guest']], function(){
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/main', [MainController::class, 'index'])->name('main');
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-    Route::get('/goods', [ProductsController::class, 'index'])->name('products');
+    Route::get('/products', [ProductsController::class, 'index'])->name('products');
 });
 
