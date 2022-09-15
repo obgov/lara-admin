@@ -9,9 +9,9 @@ class ProductsController extends Controller
 {
     protected Product $products;
 
-    public function __construct(Product $Products)
+    public function __construct(Product $products)
     {
-        $this->products = $Products;
+        $this->products = $products;
     }
 
     public function index(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
