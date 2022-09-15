@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
-    protected Product $Products;
+    protected Product $products;
 
     public function __construct(Product $Products)
     {
-        $this->Products = $Products;
+        $this->products = $Products;
     }
 
     public function index(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
