@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\GoodsController;
+use App\Http\Controllers\ProductsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +33,6 @@ Route::group(['middleware' => ['guest']], function(){
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/main', [MainController::class, 'index'])->name('main');
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-    Route::get('/goods', [GoodsController::class, 'index'])->name('goods');
+    Route::get('/goods', [ProductsController::class, 'index'])->name('products');
 });
 

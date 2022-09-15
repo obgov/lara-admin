@@ -3,7 +3,7 @@
         <a class="inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white" href="/main">Главная</a>
     </li>
     <li class="mr-3 mt-5 ml-5">
-        <a class="inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white" href="/goods">Управление
+        <a class="inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white" href="/products">Управление
             ассортиментом</a>
     </li>
     <li class="mr-3 mt-5 ml-5">
