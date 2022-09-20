@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('category_id');
             $table->text('description')->nullable();
             $table->unsignedInteger('price');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
