@@ -20,18 +20,22 @@
     <h3>Добавление новых товаров</h3>
     <form id="add-product-form" method="POST">
         <div id="add-product-response"></div>
+        <div id="name-error"></div>
         <label for="product-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Наименование
             товара</label>
         <input type="text" id="product-name" name="product_name"
                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"><br>
+        <div id="desc-error"></div>
         <label for="product-desc" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Описание
             товара</label>
         <input type="text" id="product-desc" name="product_desc"
                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"><br>
+        <div id="price-error"></div>
         <label for="product-price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Стоимость
             товара</label>
         <input type="text" id="product-price" name="product_price"
                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"><br>
+        <div id="cat-error"></div>
         <label for="category">Категория:</label>
 
         <select name="category" id="category">
@@ -65,7 +69,19 @@
         }).then((response) => {
             return response.json();
         }).then((data) => {
-            document.getElementById('add-product-response').innerHTML = data.response;
+            console.log(data);
+            if (data.errors.product_name){
+                document.getElementById('name-error').innerHTML = data.errors.product_name;
+            }
+            if (data.errors.product_desc){
+                document.getElementById('desc-error').innerHTML = data.errors.product_desc;
+            }
+            if (data.errors.product_price){
+                document.getElementById('price-error').innerHTML = data.errors.product_price;
+            }
+            if (data.errors.category){
+                document.getElementById('cat-error').innerHTML = data.errors.category;
+            }
         });
     });
 </script>

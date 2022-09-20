@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -14,7 +15,7 @@ class ProductsController extends Controller
         return view('products', ['products' => Product::all(['name']), 'categories' => Category::all('id', 'name')]);
     }
 
-    public function addProduct(Request $request): \Illuminate\Http\JsonResponse
+    public function addProduct(AddProductRequest $request): \Illuminate\Http\JsonResponse
     {
         $product = Product::create([
         'name' => $request->product_name,
