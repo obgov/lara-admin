@@ -25,8 +25,8 @@ class ProductsController extends Controller
         'is_active' => $request->has('product_availability')]);
 
         if($product) {
-            return response()->json(['success' => true, 'response' => 'Продукт добавлен'], 201);
+            return response()->json(['success' => true, 'response' => __('products.added')], 201);
         }
-        return response()->json(['success' => false, 'response' => 'Неизвестная ошибка'], 500);
+        return response()->json(['success' => false, 'response' => __('products.error')], 500);
     }
 }
